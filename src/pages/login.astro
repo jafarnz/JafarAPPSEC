@@ -1,0 +1,325 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Sign In - CCA Portal">
+    <div class="min-h-screen flex items-center justify-center p-4">
+        <div class="animate-fade-in-up">
+            <!-- Main Card -->
+            <div
+                class="card bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-white/20 p-8 max-w-md w-full"
+            >
+                <!-- Header -->
+                <div class="text-center mb-8">
+                    <div
+                        class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl mb-4 shadow-lg"
+                    >
+                        <svg
+                            class="w-8 h-8 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h1 class="text-3xl font-bold text-gray-800 mb-2">
+                        Welcome back
+                    </h1>
+                    <p class="text-gray-600 font-medium">
+                        Sign in to your CCA account
+                    </p>
+                </div>
+
+                <!-- Login Form -->
+                <form id="loginForm" class="space-y-6">
+                    <!-- Name Field -->
+                    <div>
+                        <label
+                            for="uname"
+                            class="block text-sm font-semibold text-gray-700 mb-2"
+                        >
+                            Username
+                        </label>
+                        <input
+                            id="uname"
+                            type="text"
+                            placeholder="Enter your username"
+                            name="uname"
+                            required
+                            class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 transition-all duration-200 bg-white/50 backdrop-blur-sm"
+                        />
+                    </div>
+
+                    <!-- Password Field -->
+                    <div>
+                        <label
+                            for="psw"
+                            class="block text-sm font-semibold text-gray-700 mb-2"
+                        >
+                            Password
+                        </label>
+                        <div class="relative">
+                            <input
+                                id="psw"
+                                type="password"
+                                placeholder="Enter your password"
+                                name="psw"
+                                required
+                                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 transition-all duration-200 bg-white/50 backdrop-blur-sm pr-12"
+                            />
+                            <button
+                                type="button"
+                                id="togglePassword"
+                                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                            >
+                                <svg
+                                    id="eyeIcon"
+                                    class="w-5 h-5"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                                    ></path>
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                                    ></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Role Field -->
+                    <div>
+                        <label
+                            for="role"
+                            class="block text-sm font-semibold text-gray-700 mb-2"
+                        >
+                            Role
+                        </label>
+                        <select
+                            name="role"
+                            id="role"
+                            class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 transition-all duration-200 bg-white/50 backdrop-blur-sm appearance-none cursor-pointer"
+                        >
+                            <option value="member">Member</option>
+                            <option value="president">President</option>
+                            <option value="treasurer">Treasurer</option>
+                            <option value="secretary">Secretary</option>
+                        </select>
+                        <div
+                            class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
+                        >
+                            <svg
+                                class="w-5 h-5 text-gray-400"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button
+                        type="submit"
+                        id="submitBtn"
+                        class="btn-primary w-full py-4 px-6 rounded-2xl text-white font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center space-x-3"
+                    >
+                        <span id="btnText">Sign In</span>
+                        <div id="btnSpinner" class="hidden spinner"></div>
+                    </button>
+                </form>
+
+                <!-- Divider -->
+                <div class="relative my-8">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-gray-200"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-4 bg-white text-gray-500 font-medium">
+                            Don't have an account?
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Register Link -->
+                <div class="text-center">
+                    <a
+                        href="/register"
+                        class="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-semibold transition-colors duration-200"
+                    >
+                        <span>Create new account</span>
+                        <svg
+                            class="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Back to Home -->
+            <div class="text-center mt-6">
+                <a
+                    href="/"
+                    class="inline-flex items-center space-x-2 text-gray-500 hover:text-gray-700 text-sm font-medium transition-colors duration-200"
+                >
+                    <svg
+                        class="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    <span>Back to home</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Decorations -->
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+        <div
+            class="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-indigo-600/20 rounded-full blur-3xl"
+        >
+        </div>
+        <div
+            class="absolute -bottom-40 -left-32 w-80 h-80 bg-gradient-to-br from-purple-400/20 to-pink-600/20 rounded-full blur-3xl"
+        >
+        </div>
+    </div>
+</Layout>
+
+<script>
+    // Toggle password visibility
+    const togglePassword = document.getElementById("togglePassword");
+    const passwordInput = document.getElementById("psw");
+    const eyeIcon = document.getElementById("eyeIcon");
+
+    togglePassword.addEventListener("click", function () {
+        const type =
+            passwordInput.getAttribute("type") === "password"
+                ? "text"
+                : "password";
+        passwordInput.setAttribute("type", type);
+
+        if (type === "password") {
+            eyeIcon.innerHTML = `
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+            `;
+        } else {
+            eyeIcon.innerHTML = `
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21"></path>
+            `;
+        }
+    });
+
+    // Form submission
+    function processForm(event) {
+        event.preventDefault();
+
+        const submitBtn = document.getElementById("submitBtn");
+        const btnText = document.getElementById("btnText");
+        const btnSpinner = document.getElementById("btnSpinner");
+
+        // Show loading state
+        btnText.textContent = "Signing in...";
+        btnSpinner.classList.remove("hidden");
+        submitBtn.disabled = true;
+
+        const uname = document.getElementById("uname");
+        const psw = document.getElementById("psw");
+        const role = document.getElementById("role").value;
+
+        const data = JSON.stringify({
+            name: uname.value,
+            password: psw.value,
+        });
+
+        const xhr = new XMLHttpRequest();
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                // Reset button state
+                btnText.textContent = "Sign In";
+                btnSpinner.classList.add("hidden");
+                submitBtn.disabled = false;
+
+                try {
+                    const response = JSON.parse(this.responseText);
+                    if (this.status === 200) {
+                        localStorage.setItem("token", response.token);
+                        window.showToast(
+                            "Welcome back! Redirecting...",
+                            "success",
+                        );
+
+                        setTimeout(() => {
+                            if (response.role === "member") {
+                                window.location.href = "/member";
+                            } else if (response.role === "president") {
+                                window.location.href = "/president";
+                            } else if (response.role === "treasurer") {
+                                window.location.href = "/treasurer";
+                            } else if (response.role === "secretary") {
+                                window.location.href = "/secretary";
+                            }
+                        }, 1000);
+                    } else {
+                        window.showToast(
+                            response.message || "Login failed",
+                            "error",
+                        );
+                    }
+                } catch (error) {
+                    console.error(
+                        "Response is not valid JSON:",
+                        this.responseText,
+                    );
+                    window.showToast(
+                        "Server error: Invalid response format",
+                        "error",
+                    );
+                }
+            }
+        });
+
+        xhr.open("POST", "/api/login-" + role);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(data);
+    }
+
+    const form = document.getElementById("loginForm");
+    form.addEventListener("submit", processForm);
+</script>

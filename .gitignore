@@ -1,0 +1,21 @@
+# Dependencies
+/node_modules
+
+# Build output
+/dist
+/build
+/.astro
+
+# Environment variables
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# macOS
+.DS_Store
+
+# Other
+OLDPUB/

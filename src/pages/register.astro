@@ -1,0 +1,662 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Create Account - CCA Portal">
+    <div class="min-h-screen flex items-center justify-center p-4">
+        <div class="animate-fade-in-up">
+            <!-- Main Card -->
+            <div
+                class="card bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-white/20 p-8 max-w-md w-full"
+            >
+                <!-- Header -->
+                <div class="text-center mb-8">
+                    <div
+                        class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl mb-4 shadow-lg"
+                    >
+                        <svg
+                            class="w-8 h-8 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h1 class="text-3xl font-bold text-gray-800 mb-2">
+                        Join CCA Portal
+                    </h1>
+                    <p class="text-gray-600 font-medium">
+                        Create your account to get started
+                    </p>
+                </div>
+
+                <!-- Registration Form Section -->
+                <div id="registrationFormSection">
+                    <!-- Register Form -->
+                    <form id="registrationForm" class="space-y-6">
+                        <!-- Name Field -->
+                        <div>
+                            <label
+                                for="uname"
+                                class="block text-sm font-semibold text-gray-700 mb-2"
+                            >
+                                Full Name
+                            </label>
+                            <input
+                                id="uname"
+                                type="text"
+                                placeholder="Enter your full name"
+                                name="uname"
+                                required
+                                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-500 focus:ring-4 focus:ring-green-500/20 transition-all duration-200 bg-white/50 backdrop-blur-sm"
+                            />
+                        </div>
+
+                        <!-- Email Field -->
+                        <div>
+                            <label
+                                for="email"
+                                class="block text-sm font-semibold text-gray-700 mb-2"
+                            >
+                                Email Address
+                            </label>
+                            <input
+                                id="email"
+                                type="email"
+                                placeholder="Enter your email"
+                                name="email"
+                                required
+                                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-500 focus:ring-4 focus:ring-green-500/20 transition-all duration-200 bg-white/50 backdrop-blur-sm"
+                            />
+                        </div>
+
+                        <!-- Password Field -->
+                        <div>
+                            <label
+                                for="psw"
+                                class="block text-sm font-semibold text-gray-700 mb-2"
+                            >
+                                Password
+                            </label>
+                            <div class="relative">
+                                <input
+                                    id="psw"
+                                    type="password"
+                                    placeholder="Create a strong password"
+                                    name="psw"
+                                    required
+                                    minlength="6"
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-500 focus:ring-4 focus:ring-green-500/20 transition-all duration-200 bg-white/50 backdrop-blur-sm pr-12"
+                                />
+                                <button
+                                    type="button"
+                                    id="togglePassword"
+                                    class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                                >
+                                    <svg
+                                        id="eyeIcon"
+                                        class="w-5 h-5"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                                        ></path>
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                                        ></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">
+                                Minimum 6 characters required
+                            </p>
+                        </div>
+
+                        <!-- Role Field -->
+                        <div>
+                            <label
+                                for="role"
+                                class="block text-sm font-semibold text-gray-700 mb-2"
+                            >
+                                Select Your Role
+                            </label>
+                            <div class="relative">
+                                <select
+                                    name="role"
+                                    id="role"
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-500 focus:ring-4 focus:ring-green-500/20 transition-all duration-200 bg-white/50 backdrop-blur-sm appearance-none cursor-pointer"
+                                >
+                                    <option value="member">Member</option>
+                                    <option value="president">President</option>
+                                    <option value="treasurer">Treasurer</option>
+                                    <option value="secretary">Secretary</option>
+                                </select>
+                                <div
+                                    class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
+                                >
+                                    <svg
+                                        class="w-5 h-5 text-gray-400"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Terms and Conditions -->
+                        <div class="flex items-start space-x-3">
+                            <input
+                                id="terms"
+                                type="checkbox"
+                                required
+                                class="mt-1 h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded"
+                            />
+                            <label for="terms" class="text-sm text-gray-600">
+                                I agree to the
+                                <a
+                                    href="#"
+                                    class="text-green-600 hover:text-green-700 font-medium"
+                                >
+                                    Terms of Service
+                                </a>
+                                and
+                                <a
+                                    href="#"
+                                    class="text-green-600 hover:text-green-700 font-medium"
+                                >
+                                    Privacy Policy
+                                </a>
+                            </label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button
+                            type="submit"
+                            id="submitBtn"
+                            class="w-full py-4 px-6 rounded-2xl text-white font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center space-x-3 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700"
+                        >
+                            <span id="btnText">Create Account</span>
+                            <div id="btnSpinner" class="hidden spinner"></div>
+                        </button>
+                    </form>
+
+                    <!-- Divider -->
+                    <div class="relative my-8">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-200"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span
+                                class="px-4 bg-white text-gray-500 font-medium"
+                            >
+                                Already have an account?
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Login Link -->
+                    <div class="text-center">
+                        <a
+                            href="/login"
+                            class="inline-flex items-center space-x-2 text-green-600 hover:text-green-700 font-semibold transition-colors duration-200"
+                        >
+                            <span>Sign in instead</span>
+                            <svg
+                                class="w-4 h-4"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Email Verification Section (Initially Hidden) -->
+                <div id="emailVerificationSection" class="hidden">
+                    <!-- Header for verification -->
+                    <div class="text-center mb-6">
+                        <div
+                            class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl mb-4 shadow-lg"
+                        >
+                            <svg
+                                class="w-8 h-8 text-white"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">
+                            Check Your Email
+                        </h2>
+                        <p class="text-gray-600 font-medium">
+                            We've sent a verification code to your email address
+                        </p>
+                    </div>
+
+                    <!-- Verification Form -->
+                    <form id="verifyEmailForm" class="space-y-6">
+                        <!-- Email Field (readonly) -->
+                        <div>
+                            <label
+                                for="verificationEmail"
+                                class="block text-sm font-semibold text-gray-700 mb-2"
+                            >
+                                Email Address
+                            </label>
+                            <input
+                                id="verificationEmail"
+                                type="email"
+                                readonly
+                                class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-600"
+                            />
+                        </div>
+
+                        <!-- Verification Code Field -->
+                        <div>
+                            <label
+                                for="verificationCode"
+                                class="block text-sm font-semibold text-gray-700 mb-2"
+                            >
+                                Verification Code
+                            </label>
+                            <input
+                                id="verificationCode"
+                                type="text"
+                                placeholder="Enter 6-digit code"
+                                name="verificationCode"
+                                required
+                                maxlength="6"
+                                pattern="[0-9]{6}"
+                                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 transition-all duration-200 bg-white/50 backdrop-blur-sm text-center text-2xl tracking-widest"
+                            />
+                            <p class="text-xs text-gray-500 mt-1">
+                                Enter the 6-digit code sent to your email
+                            </p>
+                        </div>
+
+                        <!-- Verify Button -->
+                        <button
+                            type="submit"
+                            id="verifyBtn"
+                            class="w-full py-4 px-6 rounded-2xl text-white font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center space-x-3 bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700"
+                        >
+                            <span id="verifyBtnText">Verify Account</span>
+                            <div id="verifyBtnSpinner" class="hidden spinner">
+                            </div>
+                        </button>
+                    </form>
+
+                    <!-- Resend Code -->
+                    <div class="text-center mt-6">
+                        <button
+                            type="button"
+                            id="resendCode"
+                            class="text-gray-600 hover:text-gray-800 font-medium transition-colors duration-200"
+                        >
+                            Didn't receive the code? Resend
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Back to Home -->
+                <div class="text-center mt-6">
+                    <a
+                        href="/"
+                        class="inline-flex items-center space-x-2 text-gray-500 hover:text-gray-700 text-sm font-medium transition-colors duration-200"
+                    >
+                        <svg
+                            class="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
+                        <span>Back to home</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Background Decorations -->
+        <div class="fixed inset-0 -z-10 overflow-hidden">
+            <div
+                class="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-br from-green-400/20 to-emerald-600/20 rounded-full blur-3xl"
+            >
+            </div>
+            <div
+                class="absolute -bottom-40 -left-32 w-80 h-80 bg-gradient-to-br from-purple-400/20 to-pink-600/20 rounded-full blur-3xl"
+            >
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle password visibility
+        const togglePassword = document.getElementById("togglePassword");
+        const passwordInput = document.getElementById("psw");
+        const eyeIcon = document.getElementById("eyeIcon");
+
+        togglePassword.addEventListener("click", function () {
+            const type =
+                passwordInput.getAttribute("type") === "password"
+                    ? "text"
+                    : "password";
+            passwordInput.setAttribute("type", type);
+
+            if (type === "password") {
+                eyeIcon.innerHTML = `
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+            `;
+            } else {
+                eyeIcon.innerHTML = `
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21"></path>
+            `;
+            }
+        });
+
+        // Form validation
+        function validateForm() {
+            const name = document.getElementById("uname").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("psw").value;
+            const terms = document.getElementById("terms").checked;
+
+            if (name.length < 2) {
+                window.showToast(
+                    "Name must be at least 2 characters long",
+                    "error",
+                );
+                return false;
+            }
+
+            if (!email.includes("@") || !email.includes(".")) {
+                window.showToast("Please enter a valid email address", "error");
+                return false;
+            }
+
+            if (password.length < 6) {
+                window.showToast(
+                    "Password must be at least 6 characters long",
+                    "error",
+                );
+                return false;
+            }
+
+            if (!terms) {
+                window.showToast(
+                    "Please accept the terms and conditions",
+                    "error",
+                );
+                return false;
+            }
+
+            return true;
+        }
+
+        // Form submission
+        function handleRegistrationSubmit(event) {
+            event.preventDefault();
+
+            if (!validateForm()) {
+                return;
+            }
+
+            const submitBtn = document.getElementById("submitBtn");
+            const btnText = document.getElementById("btnText");
+            const btnSpinner = document.getElementById("btnSpinner");
+
+            // Show loading state
+            btnText.textContent = "Sending verification email...";
+            btnSpinner.classList.remove("hidden");
+            submitBtn.disabled = true;
+
+            const uname = document.getElementById("uname");
+            const psw = document.getElementById("psw");
+            const email = document.getElementById("email");
+            const role = document.getElementById("role").value;
+
+            const data = JSON.stringify({
+                name: uname.value,
+                password: psw.value,
+                email: email.value,
+                role: role,
+            });
+
+            const xhr = new XMLHttpRequest();
+            xhr.addEventListener("readystatechange", function () {
+                if (this.readyState === 4) {
+                    // Reset button state
+                    btnText.textContent = "Create Account";
+                    btnSpinner.classList.add("hidden");
+                    submitBtn.disabled = false;
+
+                    try {
+                        const response = JSON.parse(this.responseText);
+                        if (this.status === 200) {
+                            // Success: Email sent
+                            window.showToast(
+                                response.message ||
+                                    "Verification email sent. Please check your inbox.",
+                                "success",
+                            );
+                            // Hide registration form and show verification form
+                            document
+                                .getElementById("registrationFormSection")
+                                .classList.add("hidden");
+                            document
+                                .getElementById("emailVerificationSection")
+                                .classList.remove("hidden");
+                            document.getElementById("verificationEmail").value =
+                                email.value; // Pre-fill email
+                        } else {
+                            // Error from initial registration attempt
+                            window.showToast(
+                                response.message || "Registration failed",
+                                "error",
+                            );
+                        }
+                    } catch (error) {
+                        console.error(
+                            "Response is not valid JSON:",
+                            this.responseText,
+                        );
+                        window.showToast(
+                            "Registration failed: Invalid response format",
+                            "error",
+                        );
+                    }
+                }
+            });
+
+            xhr.open("POST", "/api/register-" + role); // Role-specific registration endpoint
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send(data);
+        }
+
+        // New function to handle email verification submission
+        function handleVerificationSubmit(event) {
+            event.preventDefault();
+
+            const verifyBtn = document.getElementById("verifyBtn");
+            const verifyBtnText = document.getElementById("verifyBtnText");
+            const verifyBtnSpinner =
+                document.getElementById("verifyBtnSpinner");
+
+            // Show loading state
+            verifyBtnText.textContent = "Verifying...";
+            verifyBtnSpinner.classList.remove("hidden");
+            verifyBtn.disabled = true;
+
+            const email = document.getElementById("verificationEmail").value;
+            const code = document.getElementById("verificationCode").value;
+
+            const data = JSON.stringify({
+                email: email,
+                code: code,
+            });
+
+            const xhr = new XMLHttpRequest();
+            xhr.addEventListener("readystatechange", function () {
+                if (this.readyState === 4) {
+                    // Reset button state
+                    verifyBtnText.textContent = "Verify Account";
+                    verifyBtnSpinner.classList.add("hidden");
+                    verifyBtn.disabled = false;
+
+                    try {
+                        const response = JSON.parse(this.responseText);
+                        if (this.status === 201) {
+                            // Success: User created
+                            window.showToast(
+                                response.message ||
+                                    "Account verified and created successfully! Redirecting to login...",
+                                "success",
+                            );
+                            setTimeout(() => {
+                                window.location.href = "/login";
+                            }, 2000);
+                        } else {
+                            // Error from verification attempt
+                            window.showToast(
+                                response.message ||
+                                    "Email verification failed.",
+                                "error",
+                            );
+                        }
+                    } catch (error) {
+                        console.error(
+                            "Response is not valid JSON:",
+                            this.responseText,
+                        );
+                        window.showToast(
+                            "Verification failed: Invalid response format",
+                            "error",
+                        );
+                    }
+                }
+            });
+
+            xhr.open("POST", "/api/verify-email"); // Email verification endpoint
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send(data);
+        }
+
+        // Resend code functionality
+        function handleResendCode() {
+            const email = document.getElementById("verificationEmail").value;
+            const resendBtn = document.getElementById("resendCode");
+
+            resendBtn.textContent = "Sending...";
+            resendBtn.disabled = true;
+
+            // Get the original form data to resend
+            const role = document.getElementById("role").value;
+            const name = document.getElementById("uname").value;
+            const password = document.getElementById("psw").value;
+
+            const data = JSON.stringify({
+                name: name,
+                password: password,
+                email: email,
+                role: role,
+            });
+
+            const xhr = new XMLHttpRequest();
+            xhr.addEventListener("readystatechange", function () {
+                if (this.readyState === 4) {
+                    resendBtn.textContent = "Didn't receive the code? Resend";
+                    resendBtn.disabled = false;
+
+                    try {
+                        const response = JSON.parse(this.responseText);
+                        if (this.status === 200) {
+                            window.showToast(
+                                "Verification code resent successfully!",
+                                "success",
+                            );
+                        } else {
+                            window.showToast(
+                                response.message || "Failed to resend code",
+                                "error",
+                            );
+                        }
+                    } catch (error) {
+                        window.showToast("Failed to resend code", "error");
+                    }
+                }
+            });
+
+            xhr.open("POST", "/api/register-" + role);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send(data);
+        }
+
+        const registrationForm = document.getElementById("registrationForm");
+        registrationForm.addEventListener("submit", handleRegistrationSubmit);
+
+        const verifyForm = document.getElementById("verifyEmailForm");
+        verifyForm.addEventListener("submit", handleVerificationSubmit);
+
+        const resendBtn = document.getElementById("resendCode");
+        resendBtn.addEventListener("click", handleResendCode);
+
+        // Real-time password strength indicator
+        const passwordField = document.getElementById("psw");
+        passwordField.addEventListener("input", function () {
+            const password = this.value;
+            const strength = getPasswordStrength(password);
+            // You could add a visual strength indicator here
+        });
+
+        function getPasswordStrength(password) {
+            if (password.length < 6) return "weak";
+            if (
+                password.length >= 8 &&
+                /[A-Z]/.test(password) &&
+                /[0-9]/.test(password)
+            )
+                return "strong";
+            return "medium";
+        }
+    </script>
+</Layout>
