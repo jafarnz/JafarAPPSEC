@@ -79,6 +79,8 @@ function startFallbackServer() {
             <li>POST /api/register-treasurer (with email verification)</li>
             <li>POST /api/register-secretary (with email verification)</li>
             <li>POST /api/verify-email</li>
+            <li>POST /api/request-password-reset</li>
+            <li>POST /api/reset-password</li>
             <li>POST /api/login-member</li>
             <li>POST /api/login-president</li>
             <li>POST /api/login-treasurer</li>

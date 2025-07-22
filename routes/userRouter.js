@@ -7,6 +7,8 @@ const {
 const {
   sendVerificationEmail,
   verifyAndCreateUser,
+  sendPasswordResetEmail,
+  resetPasswordWithCode,
 } = require("../controller/emailVerification.js");
 
 router.post("/register-member", async (req, res) => {
@@ -27,6 +29,14 @@ router.post("/register-secretary", async (req, res) => {
 
 router.post("/verify-email", async (req, res) => {
   await verifyAndCreateUser(req, res);
+});
+
+router.post("/request-password-reset", async (req, res) => {
+  await sendPasswordResetEmail(req, res);
+});
+
+router.post("/reset-password", async (req, res) => {
+  await resetPasswordWithCode(req, res);
 });
 
 router.post("/login-member", async (req, res) => {
