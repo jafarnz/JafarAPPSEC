@@ -25,7 +25,7 @@ const { title } = Astro.props;
         <title>{title}</title>
     </head>
     <body
-        class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 font-inter"
+        class="min-h-screen bg-gradient-to-br from-slate-50 via-rose-50 to-red-100 font-inter"
     >
         <slot />
 
@@ -34,6 +34,7 @@ const { title } = Astro.props;
         </div>
 
         <script>
+            // @ts-nocheck
             // Toast functionality
             window.showToast = function (message, type = "success") {
                 const toastContainer =
@@ -44,8 +45,8 @@ const { title } = Astro.props;
                     type === "success"
                         ? "bg-green-500"
                         : type === "error"
-                          ? "bg-red-500"
-                          : "bg-blue-500";
+                          ? "bg-red-600"
+                          : "bg-rose-500";
 
                 toast.className = `${bgColor} text-white px-6 py-3 rounded-lg shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out flex items-center space-x-2 max-w-sm`;
 
@@ -115,19 +116,19 @@ const { title } = Astro.props;
     input:focus,
     select:focus {
         outline: none;
-        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.12); /* rose-500 */
     }
 
     /* Button hover effects */
     .btn-primary {
-        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
         transition: all 0.2s ease;
     }
 
     .btn-primary:hover {
-        background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+        background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
         transform: translateY(-1px);
-        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+        box-shadow: 0 8px 25px rgba(239, 68, 68, 0.3);
     }
 
     .btn-danger {
@@ -170,7 +171,7 @@ const { title } = Astro.props;
     /* Loading spinner */
     .spinner {
         border: 2px solid #f3f4f6;
-        border-top: 2px solid #3b82f6;
+        border-top: 2px solid #ef4444; /* red-500 */
         border-radius: 50%;
         width: 20px;
         height: 20px;

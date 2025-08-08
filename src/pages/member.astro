@@ -3,7 +3,15 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Member Dashboard - CCA Portal">
-    <div class="min-h-screen p-4">
+    <!-- Loading/Guard -->
+    <div id="loading" class="min-h-screen p-4 flex items-center justify-center">
+        <div class="flex flex-col items-center text-gray-600">
+            <div class="spinner"></div>
+            <p class="mt-3 font-medium">Checking access…</p>
+        </div>
+    </div>
+
+    <div id="protectedRoot" class="hidden min-h-screen p-4">
         <div class="animate-fade-in-up max-w-4xl mx-auto">
             <!-- Header -->
             <div
@@ -12,7 +20,7 @@ import Layout from "../layouts/Layout.astro";
                 <div class="flex items-center justify-between">
                     <div class="flex items-center space-x-4">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg"
+                            class="w-16 h-16 bg-gradient-to-br from-rose-500 to-red-600 rounded-2xl flex items-center justify-center shadow-lg"
                         >
                             <svg
                                 class="w-8 h-8 text-white"
@@ -98,7 +106,7 @@ import Layout from "../layouts/Layout.astro";
                 >
                     <div class="flex items-center space-x-4">
                         <div
-                            class="w-12 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-xl flex items-center justify-center"
+                            class="w-12 h-12 bg-gradient-to-br from-rose-400 to-red-500 rounded-xl flex items-center justify-center"
                         >
                             <svg
                                 class="w-6 h-6 text-white"
@@ -168,7 +176,7 @@ import Layout from "../layouts/Layout.astro";
                         class="text-2xl font-bold text-gray-800 mb-6 flex items-center space-x-3"
                     >
                         <svg
-                            class="w-6 h-6 text-blue-600"
+                            class="w-6 h-6 text-red-600"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -184,7 +192,7 @@ import Layout from "../layouts/Layout.astro";
                     </h2>
                     <div class="space-y-4">
                         <div
-                            class="p-4 bg-blue-50 rounded-xl border border-blue-100 hover:bg-blue-100 transition-colors cursor-pointer"
+                            class="p-4 bg-rose-50 rounded-xl border border-rose-100 hover:bg-rose-100 transition-colors cursor-pointer"
                         >
                             <h3 class="font-semibold text-gray-800 mb-2">
                                 Club Documents
@@ -254,7 +262,7 @@ import Layout from "../layouts/Layout.astro";
                         <div
                             class="flex items-start space-x-3 p-3 hover:bg-gray-50 rounded-lg transition-colors"
                         >
-                            <div class="w-2 h-2 bg-blue-400 rounded-full mt-2">
+                            <div class="w-2 h-2 bg-rose-400 rounded-full mt-2">
                             </div>
                             <div>
                                 <p class="text-sm font-medium text-gray-800">
@@ -289,7 +297,7 @@ import Layout from "../layouts/Layout.astro";
                     class="text-2xl font-bold text-gray-800 mb-6 flex items-center space-x-3"
                 >
                     <svg
-                        class="w-6 h-6 text-indigo-600"
+                        class="w-6 h-6 text-rose-600"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -304,7 +312,7 @@ import Layout from "../layouts/Layout.astro";
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                     <button
-                        class="p-4 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+                        class="p-4 bg-gradient-to-br from-rose-500 to-red-600 text-white rounded-xl hover:from-rose-600 hover:to-red-700 transition-all duration-200 shadow-lg hover:shadow-xl"
                     >
                         <svg
                             class="w-6 h-6 mx-auto mb-2"
@@ -352,7 +360,7 @@ import Layout from "../layouts/Layout.astro";
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
                                 stroke-width="2"
-                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 0 1 9.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM7 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"
                             ></path>
                         </svg>
                         <span class="text-sm font-medium">Members</span>
@@ -370,13 +378,13 @@ import Layout from "../layouts/Layout.astro";
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
                                 stroke-width="2"
-                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
                             ></path>
                             <path
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
                                 stroke-width="2"
-                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
                         </svg>
                         <span class="text-sm font-medium">Settings</span>
                     </button>
@@ -388,21 +396,29 @@ import Layout from "../layouts/Layout.astro";
     <!-- Background Decorations -->
     <div class="fixed inset-0 -z-10 overflow-hidden">
         <div
-            class="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-indigo-600/20 rounded-full blur-3xl"
+            class="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-br from-rose-400/20 to-red-600/20 rounded-full blur-3xl"
         >
         </div>
         <div
-            class="absolute -bottom-40 -left-32 w-80 h-80 bg-gradient-to-br from-purple-400/20 to-pink-600/20 rounded-full blur-3xl"
+            class="absolute -bottom-40 -left-32 w-80 h-80 bg-gradient-to-br from-pink-400/20 to-rose-600/20 rounded-full blur-3xl"
         >
         </div>
         <div
-            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-indigo-400/10 to-blue-600/10 rounded-full blur-3xl"
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-rose-400/10 to-red-600/10 rounded-full blur-3xl"
         >
         </div>
     </div>
 </Layout>
 
 <script>
+    // @ts-nocheck
+    function showProtected() {
+        const loading = document.getElementById("loading");
+        const root = document.getElementById("protectedRoot");
+        if (loading) loading.classList.add("hidden");
+        if (root) root.classList.remove("hidden");
+    }
+
     function logoutUser(event) {
         event.preventDefault();
         localStorage.removeItem("token");
@@ -412,35 +428,48 @@ import Layout from "../layouts/Layout.astro";
         }, 1000);
     }
 
-    function checkAuth() {
+    function decodeRoleFromToken(token) {
+        try {
+            const payload = JSON.parse(atob(token.split(".")[1] || ""));
+            return payload?.role;
+        } catch (_) {
+            return null;
+        }
+    }
+
+    async function checkAuth() {
         const token = localStorage.getItem("token");
-        if (token === null) {
+        const expectedRole = "member";
+        if (!token) {
             window.location.href = "/login";
-        } else {
-            const xhr = new XMLHttpRequest();
-            xhr.addEventListener("readystatechange", function () {
-                if (this.readyState === 4) {
-                    if (this.status === 200) {
-                        console.log("Member access granted");
-                        window.showToast(
-                            "Welcome to your member dashboard!",
-                            "success",
-                        );
-                    } else {
-                        localStorage.removeItem("token");
-                        window.showToast(
-                            "Session expired. Please login again.",
-                            "error",
-                        );
-                        setTimeout(() => {
-                            window.location.href = "/login";
-                        }, 2000);
-                    }
-                }
+            return;
+        }
+
+        const role = decodeRoleFromToken(token);
+        if (role && role !== expectedRole) {
+            // Redirect to login when accessing a different role page
+            window.location.replace("/login");
+            return;
+        }
+
+        try {
+            const resp = await fetch("/api/member-protected", {
+                headers: { Authorization: "Bearer " + token },
             });
-            xhr.open("GET", "/api/member-protected");
-            xhr.setRequestHeader("Authorization", "Bearer " + token);
-            xhr.send();
+            if (resp.ok) {
+                showProtected();
+                window.showToast("Welcome to your member dashboard!", "success");
+            } else {
+                localStorage.removeItem("token");
+                window.showToast("Session expired. Please login again.", "error");
+                setTimeout(() => {
+                    window.location.href = "/login";
+                }, 2000);
+            }
+        } catch (e) {
+            localStorage.removeItem("token");
+            window.showToast("Network error. Please login again.", "error");
+            setTimeout(() => (window.location.href = "/login"), 1500);
         }
     }
 
@@ -448,5 +477,5 @@ import Layout from "../layouts/Layout.astro";
     checkAuth();
 
     const logout = document.getElementById("logout");
-    logout.addEventListener("click", logoutUser);
+    if (logout) logout.addEventListener("click", logoutUser);
 </script>
